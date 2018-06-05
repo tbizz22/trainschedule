@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Office Trivia</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="Assets/css/materialize.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/css/style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <img class="responsive-img" src="Assets/images/theoffice.png"></img>
+        </div>
+
+    <!-- start Div -->
+        <div id="intro" class="center-align">
+            <h4>Think you know more about Phylis and Creed than anyone else?
+            <br>
+            Answer some qustions and find out.</h4>
+            <br>
+            <h3>How hard could it be?</h3>
+            <div class="center-align">
+                <a id="begin" class="waves-effect waves-light btn-large blue-grey darken-3">...Thats what she said</a>
+            </div>
+        </div>
+
+
+    <!-- question answered div -->
+        <div id="resultDiv" class="center-align hide">
+            <div class="center-align flow-text" id="resultOutcome"></div>
+            <div class="divider margintop"></div>
+            <img id="qResult" class="margintop" src=""></img>
+        </div>
+        
+    
+    
+    
+    
+    
+    <!-- Main Content Div -->
+        <div id="questionGrid" class= "hide">
+            <!-- timer -->
+            <div class="row">
+                <div class="center-align flow-text">
+                    Time Remaining: 
+                        <span id="timer">20</span>
+                    Seconds
+                </div>
+            </div>
+            <!-- Question -->
+            <div class="row">
+                <div class="card-panel z-depth-4 grey lighten-5">
+                    <div class="center-align"> 
+                        <h3 id="question">What is not one of Michael Scott's girlfriends Names?</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- answers -->
+            <div id="answers" class="row">
+                <div class="col-s-12 flow-text center-align vertical-center grey lighten-4 hoverable answer"id="answer1">
+                    <h4>Pam</h4>
+                </div>
+                <div class="col-s-12 flow-text center-align vertical-center grey lighten-4 hoverable answer" id="answer2">
+                    <h4>Pam</h4>
+                </div>
+                <div class="col-s-12 flow-text center-align vertical-center grey lighten-4 hoverable answer" id="answer3">
+                    <h4>Pam</h4>
+                </div>
+                <div class="col-s-12 flow-text center-align vertical-center grey lighten-4 hoverable answer" id="answer4">
+                    <h4>Pam</h4>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- Game Results div -->
+        <div class="hide" id="gameScore">
+            <div class="row center-align">
+                <div class="center-align-text flow-text">
+                    <h4>The results are in!</h4>
+                </div>
+                <div class="center-align-text">
+                    <div class="flow-text">Correct:
+                        <span id="correctAnswer">1</span>
+                    </div>
+                    <div class="flow-text">Incorrect:
+                        <span id="incorrectAnswer">2</span>
+                    </div>
+                    <div class="flow-text">Unanswered:
+                        <span id="unanswered">2</span>
+                    </div>
+                </div>
+                <div class="divider margintop"></div>
+                <div class="center-align margintop">
+                    <a id="tryAgain" class="waves-effect waves-light btn-large blue-grey darken-3">Try Again</a>
+                </div>
+            </div>
+        </div>
+
+    
+    <!-- this is the main container div -->
+        <footer class="footer">
+            <div class="row">
+                <div class="center-align hide" id="qguide">Question 
+                    <span id="currentQuestion"></span> of 
+                    <span id="totalQuestion"></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!--JS Libs  -->
+    <script type="text/javascript" src="Assets/javascript/materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="Assets/javascript/game.js"></script>
+</body>
+
+</html>
