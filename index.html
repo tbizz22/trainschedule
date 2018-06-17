@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GC Transit</title>
+    <!--  favicon -->
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="Assets/css/materialize.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/css/style.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="center-align mt40 card p20 grey lighten-2">
+                <span class="">
+                    <i class="fas fa-train fa-8x red-text darken-2"></i>
+                </span>
+                <h2>Gotham City Train Schedule</h2>
+            </div>
+        </div>
+
+        <h4>Current Trains</h4>
+        <table class="highlight centered">
+            <!--add this "responsive-table" to make table responsive. out for now due to some weird page layout bugs-->
+            <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+        <!-- material section -->
+        <div class="section"></div>
+
+        <!-- admin Section -->
+        <div class="row">
+            <h4>Add Train</h4>
+            <form class="col s12">
+                <div class="input-field col s6">
+                    <input id="trainName" type="text" class="validate">
+                    <label for="trainName">Train Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="destination" type="text" class="validate">
+                    <label for="destination">Destination</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="startTime" type="text" class="validate timepicker">
+                    <label for="startTime">Start Time</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="frequency" type="number" class="validate">
+                    <label for="frequency">Frequency</label>
+                    <span class="helper-text" data-error="You must enter a number">Minutes</span>
+                </div>
+                <div class="input-field col s12 left">
+                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <!-- this one closes the container -->
+    </div>
+
+
+
+    <!--JS Libs  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script type="text/javascript" src="Assets/javascript/materialize.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="Assets/javascript/app.js"></script>
+</body>
+
+</html>
