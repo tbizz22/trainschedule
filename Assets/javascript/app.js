@@ -55,7 +55,8 @@ $(document).ready( function () {
    "order": [[4, "asc"]],
    "paging": false,
    "searching": false,
-   "info":false
+   "info":false,
+   "responsive": true
  });
 } );
 
