@@ -43,10 +43,12 @@ $(document).on("click", "#submit", function (event) {
   console.log(startTime);
 
   addToDB(name, dest, prettyTime, freq);
+  $("#form").trigger("reset");
 })
 
 
 db.ref(root).on("child_added", function (childSnapshot) {
+  // var now = moment().format("HH:mm");
   var r = childSnapshot.val()
   var name = r.name;
   var dest = r.dest;
@@ -54,11 +56,17 @@ db.ref(root).on("child_added", function (childSnapshot) {
   var freq = r.frequency;
   var nextArrive = null;
   var minsAway = null;
-  var now = moment();
 
-$("#tbody").append("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextArrive + "</td><td>" + minsAway+ "</td></tr>");
+  // copied this next bit of code from the example pretty heavily. I understand all of it except for the math...
+
+  var stConverted = moment(startTime, "HH:mm").subtract(1, "years");
+  var diffTime = moment().diff(moment(stConverted), "minutes");
+  var tRemain = diffTime % freq;
+  var minsAway = freq - tRemain;
+  var timeToTrain = moment().add(minsAway, "minutes");
+  nextArrive = moment(timeToTrain).format("hh:mm a");
 
 
-
-
+  // put it on the page
+  $("#tbody").append("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextArrive + "</td><td>" + minsAway + "</td></tr>");
 })
