@@ -94,5 +94,3 @@ $(document).ready(function(){
   setInterval(update,1000);
 })
 
-var currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-$("#currentTime").text(currentTime);
