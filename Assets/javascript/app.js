@@ -21,6 +21,7 @@ $(document).ready(function () {
 
 
 
+
 function addToDB(name, dest, prettyTime, freq) {
   db.ref(root).push({
     name: name,
@@ -70,3 +71,10 @@ db.ref(root).on("child_added", function (childSnapshot) {
   // put it on the page
   $("#tbody").append("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextArrive + "</td><td>" + minsAway + "</td></tr>");
 })
+
+
+
+
+// $(document).ready( function () {
+//   $('#table').DataTable();
+// } );
