@@ -78,3 +78,21 @@ db.ref(root).on("child_added", function (childSnapshot) {
 // $(document).ready( function () {
 //   $('#table').DataTable();
 // } );
+
+
+var dateTime = null;
+var date = null;
+
+var update = function() {
+  date = moment(new Date())
+  dateTime.html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+};
+
+$(document).ready(function(){
+  dateTime=$("#dateTime");
+  update();
+  setInterval(update,1000);
+})
+
+var currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+$("#currentTime").text(currentTime);
