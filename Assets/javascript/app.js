@@ -48,9 +48,20 @@ $(document).on("click", "#submit", function (event) {
 })
 
 
+var t;
+
+$(document).ready( function () {
+ t = $('#table').DataTable( {
+   "order": [[4, "asc"]],
+   "paging": false,
+   "searching": false
+ });
+} );
+
 db.ref(root).on("child_added", function (childSnapshot) {
   // var now = moment().format("HH:mm");
   var r = childSnapshot.val()
+  console.log(r)
   var name = r.name;
   var dest = r.dest;
   var startTime = r.st;
@@ -69,15 +80,12 @@ db.ref(root).on("child_added", function (childSnapshot) {
 
 
   // put it on the page
-  $("#tbody").append("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextArrive + "</td><td>" + minsAway + "</td></tr>");
+  t.row.add($("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextArrive + "</td><td>" + minsAway + "</td></tr>")).draw();
+  
 })
 
 
 
-
-// $(document).ready( function () {
-//   $('#table').DataTable();
-// } );
 
 
 var dateTime = null;
